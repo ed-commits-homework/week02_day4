@@ -21,4 +21,8 @@ class StarSystem
     def get_planets_more_moons(moon_count)
       @planets.find_all { |planet| planet.number_of_moons >= moon_count} 
     end
+
+    def get_number_of_planets_closer_than(distance)
+      @planets.find_all { |planet| planet.distance_from_sun(distance) < distance}.count
+    end
 end
