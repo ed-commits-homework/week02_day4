@@ -60,7 +60,6 @@ class TestStarSystem < Minitest::Test
   # EXTENSIONS - MAY REQUIRE LOOKING UP THE DOCS
 
   def test_get_largest_planet
-    skip
     result = @solar_system.get_largest_planet
     assert_equal(@jupiter, result)
   end
@@ -72,7 +71,6 @@ class TestStarSystem < Minitest::Test
   end
   
   def test_total_number_of_moons
-    skip
     result = @solar_system.get_total_number_of_moons
     assert_equal(176, result)
   end

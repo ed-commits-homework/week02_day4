@@ -27,4 +27,13 @@ class StarSystem
       matching_array = @planets.find_all { |planet| planet.distance_from_sun() < distance}
       return matching_array.count
     end
+
+    def get_largest_planet
+      widest= @planets.map { |planet| planet.diameter}.max
+      return @planets.find { |planet| planet.diameter == widest}
+    end
+
+    def get_total_number_of_moons
+      @planets.sum { |planet| planet.number_of_moons }
+    end
 end
