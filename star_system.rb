@@ -16,6 +16,9 @@ class StarSystem
 
     def get_planets_with_no_moons()
       @planets.find_all { |planet| planet.number_of_moons == 0} 
+    end
 
+    def get_planets_more_moons(moon_count)
+      @planets.find_all { |planet| planet.number_of_moons >= moon_count} 
     end
 end
