@@ -18,11 +18,13 @@ class StarSystem
       @planets.find_all { |planet| planet.number_of_moons == 0} 
     end
 
-    def get_planets_more_moons(moon_count)
-      @planets.find_all { |planet| planet.number_of_moons >= moon_count} 
+    def get_planets_with_more_moons(moon_count)
+      planets = @planets.find_all { |planet| planet.number_of_moons > moon_count} 
+      return planets.map{ |planet| planet.name }
     end
 
     def get_number_of_planets_closer_than(distance)
-      @planets.find_all { |planet| planet.distance_from_sun(distance) < distance}.count
+      matching_array = @planets.find_all { |planet| planet.distance_from_sun() < distance}
+      return matching_array.count
     end
 end
