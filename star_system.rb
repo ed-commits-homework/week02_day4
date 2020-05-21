@@ -42,4 +42,9 @@ class StarSystem
     def get_total_number_of_moons
       @planets.sum { |planet| planet.number_of_moons }
     end
+
+    def get_planet_names_sorted_by_increasing_distance_from_sun
+      sorted_planets = @planets.sort_by{ |planet| planet.distance_from_sun }
+      sorted_planets.map{ |planet| planet.name }
+    end
 end
