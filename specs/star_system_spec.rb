@@ -65,7 +65,6 @@ class TestStarSystem < Minitest::Test
   end
   
   def test_get_smallest_planet
-    skip
     result = @solar_system.get_smallest_planet
     assert_equal(@pluto, result)
   end

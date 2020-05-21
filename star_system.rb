@@ -33,6 +33,12 @@ class StarSystem
       return @planets.find { |planet| planet.diameter == widest}
     end
 
+    def get_smallest_planet
+      smallest_diameter= @planets.map { |planet| planet.diameter}.min
+      return @planets.find { |planet| planet.diameter == smallest_diameter}
+    end
+
+
     def get_total_number_of_moons
       @planets.sum { |planet| planet.number_of_moons }
     end
