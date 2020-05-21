@@ -9,4 +9,8 @@ class StarSystem
     def planet_names
       @planets.map{ |planet| planet.name }
     end
+
+    def get_planet_by_name(name)
+      @planets.find{ |planet| planet.name == name }
+    end
 end
