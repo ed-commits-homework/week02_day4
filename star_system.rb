@@ -33,13 +33,11 @@ class StarSystem
     end
 
     def get_largest_planet
-      widest= @planets.map { |planet| planet.diameter}.max
-      return @planets.find { |planet| planet.diameter == widest}
+      return @planets.max_by { |planet| planet.diameter}
     end
 
     def get_smallest_planet
-      smallest_diameter= @planets.map { |planet| planet.diameter}.min
-      return @planets.find { |planet| planet.diameter == smallest_diameter}
+      return @planets.min_by { |planet| planet.diameter}
     end
 
 
