@@ -11,15 +11,15 @@ class StarSystem
     end
 
     def planet_names
-      get_names_of_planets(@planets)
+      return get_names_of_planets(@planets)
     end
 
     def get_planet_by_name(name)
-      @planets.find{ |planet| planet.name == name }
+      return @planets.find{ |planet| planet.name == name }
     end
 
     def get_planets_with_no_moons()
-      @planets.find_all { |planet| planet.number_of_moons.zero?} 
+      return @planets.find_all { |planet| planet.number_of_moons.zero?} 
     end
 
     def get_planets_with_more_moons(moon_count)
