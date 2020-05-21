@@ -6,8 +6,12 @@ class StarSystem
       @planets = planet_array
     end
 
+    def get_names_of_planets(planets)
+      return planets.map{ |planet| planet.name }
+    end
+
     def planet_names
-      @planets.map{ |planet| planet.name }
+      get_names_of_planets(@planets)
     end
 
     def get_planet_by_name(name)
@@ -20,7 +24,7 @@ class StarSystem
 
     def get_planets_with_more_moons(moon_count)
       planets = @planets.find_all { |planet| planet.number_of_moons > moon_count} 
-      return planets.map{ |planet| planet.name }
+      return get_names_of_planets(planets)
     end
 
     def get_number_of_planets_closer_than(distance)
@@ -45,6 +49,6 @@ class StarSystem
 
     def get_planet_names_sorted_by_increasing_distance_from_sun
       sorted_planets = @planets.sort_by{ |planet| planet.distance_from_sun }
-      sorted_planets.map{ |planet| planet.name }
+      get_names_of_planets(sorted_planets)
     end
 end
