@@ -23,7 +23,6 @@ class TestStarSystem < Minitest::Test
   end
 
   def test_has_name
-    skip
     assert_equal("Solar System", @solar_system.name)
   end
 
