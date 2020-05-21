@@ -13,4 +13,9 @@ class StarSystem
     def get_planet_by_name(name)
       @planets.find{ |planet| planet.name == name }
     end
+
+    def get_planets_with_no_moons()
+      @planets.find_all { |planet| planet.number_of_moons == 0} 
+
+    end
 end
