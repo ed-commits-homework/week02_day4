@@ -27,7 +27,6 @@ class TestStarSystem < Minitest::Test
   end
 
   def test_has_planets
-    skip
     assert_equal(9, @solar_system.planets.count)
   end
   
